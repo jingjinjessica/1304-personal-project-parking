@@ -8,30 +8,47 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="css/Desktop_comf.css" />
     <script type="text/javascript" src="js/Desktop_comf.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="flex-col items-center page">
-      <div class="flex-col section_1">
-        <div class="flex-col">
-          <div class="flex-row section_2">
-            <img src="https://img.icons8.com/ios/100/000000/image.png" class="image"/>
-            <a href="Desktop_Profile.html" class="flex-col items-center image-wrapper" style="position: absolute;top:20px; right:20px; z-index: 100;">
-              <img src="https://img.icons8.com/ios/100/000000/guest-male.png" />
-            </a>
-          </div>
-          <div class="flex-col items-center text-wrapper view">name</div>
-          <div class="flex-col items-center text-wrapper view_1"><span class="text">xxx-xxxx Rd</span></div>
-          <div class="flex-col items-center text-wrapper_1"><span class="text_3">Price</span></div>
-
-          <select class="flex-row section_3 text_4">
-              <option>Payment</option>
-              <option>TD: 2345-3212-6252-7421</option>
-              <option>CIBC: 2345-0832-2122-1334</option>
-              <option>BMO: 6728-1345-2391-0000</option>
-          </select>
-        </div>
-        <div class="flex-col items-center text-wrapper_2"><span class="text_5">Pay</span></div>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">Parking Booking</a>
       </div>
-    </div>
+    </nav>
+    <div id="map" style="display: none"></div>
+      <div class="flex-col items-center page">
+        <div class="flex-col section_1">
+          <div class="flex-col">
+            <div class="flex-row section_2">
+              <img id="parkingImg" src="https://img.icons8.com/ios/100/000000/image.png" class="image"/>
+            </div>
+            <div class="info">
+              <div id="name" class="flex-col items-center text-wrapper view">name</div>
+              <div id="address" class="flex-col items-center text-wrapper view"><span class="text">xxx-xxxx Rd</span></div>
+              <div id="price" class="flex-col items-center text-wrapper_1 view"><span class="text_3">Price</span></div>
+
+              <select class="flex-row section_3 text_4">
+                  <option>Payment</option>
+                  <option>TD: 2345-3212-6252-7421</option>
+                  <option>CIBC: 2345-0832-2122-1334</option>
+                  <option>BMO: 6728-1345-2391-0000</option>
+              </select>
+          
+              <button class="flex-col items-center text-wrapper_2" onclick="alert('Paid Success')" ><span class="text_5">Pay</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkir5cC_p24FQV2nt-MiA9pUfT6g-l5lA&callback=initMap&libraries=places"
+          async defer></script>
+
 </html>

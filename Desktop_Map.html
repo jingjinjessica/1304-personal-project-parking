@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="css/Desktop_Map.css" />
     <script type="text/javascript" src="js/Desktop_Map.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 20%;
+        height: 350px;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -23,6 +31,11 @@
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">Parking Booking</a>
+      </div>
+    </nav>
 
   <div class="flex-col items-center page">
     <div class="flex-col section_1">
@@ -30,143 +43,9 @@
       <div id="parkingList" class="flex-col list"></div>
     </div>
   </div>
-
-
-<!--    <div class="flex-col items-center page">-->
-<!--      <div class="flex-col section_1">-->
-<!--        <div class="flex-row section_2">-->
-<!--          <img src="https://img.icons8.com/ios/100/000000/image.png" class="image"/>-->
-<!--          <a href="Desktop_Profile.html" class="flex-col items-center image-wrapper" style="position: absolute;top:20px; right:20px; z-index: 100;">-->
-<!--            <img src="https://img.icons8.com/ios/100/000000/guest-male.png" />-->
-<!--          </a>-->
-<!--        </div>-->
-<!--        <div class="flex-col list">-->
-<!--          <div class="flex-row list-item">-->
-<!--            <div class="flex-row group_1">-->
-<!--              <div class="flex-col items-center image-wrapper_1">-->
-<!--                <img src="https://img.icons8.com/ios/100/000000/image.png"-->
-<!--                  class="image_2"/>-->
-<!--              </div>-->
-<!--              <div class="flex-col group_2">-->
-<!--                <span class="text">Name</span>-->
-<!--                <div class="flex-row group_3">-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137306546010.png"-->
-<!--                    class="image_4"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137302122521.png"-->
-<!--                    class="image_6"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137304715287.png"-->
-<!--                    class="image_8"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137305681172.png"-->
-<!--                    class="image_10"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137300163506.png"-->
-<!--                    class="image_12"-->
-<!--                  />-->
-<!--                </div>-->
-<!--                <span class="text_2">xxxx-xxxx Rd</span>-->
-<!--                <span class="text_4">13 km</span>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="flex-col group_4">-->
-<!--              <span class="text_6">53</span>-->
-<!--              <a href="Desktop_ParkingSpace.html" class="flex-col items-center text-wrapper"><span class="text_8">Booking</span></a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="flex-row list-item group_5">-->
-<!--            <div class="flex-row group_1">-->
-<!--              <div class="flex-col items-center image-wrapper_1">-->
-<!--                <img src="https://img.icons8.com/ios/100/000000/image.png"-->
-<!--                  class="image_2"/>-->
-<!--              </div>-->
-<!--              <div class="flex-col group_2">-->
-<!--                <span class="text">Name</span>-->
-<!--                <div class="flex-row group_3">-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137306546010.png"-->
-<!--                    class="image_4"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137302122521.png"-->
-<!--                    class="image_6"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137304715287.png"-->
-<!--                    class="image_8"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137305681172.png"-->
-<!--                    class="image_10"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137300163506.png"-->
-<!--                    class="image_12"-->
-<!--                  />-->
-<!--                </div>-->
-<!--                <span class="text_2">xxxx-xxxx Rd</span>-->
-<!--                <span class="text_4">13 km</span>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="flex-col group_4">-->
-<!--              <span class="text_6">53</span>-->
-<!--              <a href="Desktop_ParkingSpace.html" class="flex-col items-center text-wrapper"><span class="text_8">Booking</span></a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="flex-row list-item group_6">-->
-<!--            <div class="flex-row group_1">-->
-<!--              <div class="flex-col items-center image-wrapper_1">-->
-<!--                <img src="https://img.icons8.com/ios/100/000000/image.png"-->
-<!--                  class="image_2"/>-->
-<!--              </div>-->
-<!--              <div class="flex-col group_2">-->
-<!--                <span class="text">Name</span>-->
-<!--                <div class="flex-row group_3">-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137306546010.png"-->
-<!--                    class="image_4"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137302122521.png"-->
-<!--                    class="image_6"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137304715287.png"-->
-<!--                    class="image_8"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137305681172.png"-->
-<!--                    class="image_10"-->
-<!--                  />-->
-<!--                  <img-->
-<!--                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137300163506.png"-->
-<!--                    class="image_12"-->
-<!--                  />-->
-<!--                </div>-->
-<!--                <span class="text_2">xxxx-xxxx Rd</span>-->
-<!--                <span class="text_4">13 km</span>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="flex-col group_4">-->
-<!--              <span class="text_6">53</span>-->
-<!--              <a href="Desktop_ParkingSpace.html" class="flex-col items-center text-wrapper"><span class="text_8">Booking</span></a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
   </body>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHd26BaD0zNwiPc2OEqMELGbssFQuBIF8&callback=initMap&libraries=places"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkir5cC_p24FQV2nt-MiA9pUfT6g-l5lA&callback=initMap&libraries=places"
         async defer></script>
-
-
-
 </html>

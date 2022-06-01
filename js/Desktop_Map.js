@@ -12,6 +12,7 @@ function createElement(tagName, attributes, content){
 }
 
 function createParkingDetail(detail){
+    // https://www.w3schools.com/jsref/met_document_createelement.asp
     d1 = createElement("div", {class: "flex-row list-item"});
     d21 = createElement("div", {class: "flex-row group_1"});
     d22 = createElement("div", {class: "flex-col group_4"});
@@ -23,9 +24,10 @@ function createParkingDetail(detail){
     d21.appendChild(d211);
     d21.appendChild(d212);
 
+    let parkingImage = (detail.photos && detail.photos[0] && detail.photos[0].getUrl()) ?? "https://img.icons8.com/ios/100/000000/image.png";
     let availableSeats = Math.floor(Math.random() * 20) + 20;
     d221 = createElement("span", {class: "text_6"}, availableSeats);
-    d222 = createElement("a", {class: "flex-col items-center text-wrapper", href:"Desktop_ParkingSpace.html?seats=" + availableSeats});
+    d222 = createElement("a", {class: "flex-col items-center text-wrapper", href:"Desktop_ParkingSpace.html?seats=" + availableSeats + "&place_id=" + detail.place_id });
     d22.appendChild(d221);
     d22.appendChild(d222);
 
@@ -33,7 +35,7 @@ function createParkingDetail(detail){
     d222.appendChild(d2221);
 
 
-    d2111 = createElement("img", {class: "image_2", src: (detail.photos && detail.photos[0] && detail.photos[0].getUrl()) ?? "https://img.icons8.com/ios/100/000000/image.png"});
+    d2111 = createElement("img", {class: "image_2", src: parkingImage});
     d211.appendChild(d2111);
 
     d2121 = createElement("span", {class: "text"}, detail.name);
@@ -47,12 +49,12 @@ function createParkingDetail(detail){
 
     let rating = detail.rating;
     for(let i = 0; i < 5; i++){
-        let ratingImage = "https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137306546010.png";
+        let ratingImage = "https://img.icons8.com/ios-glyphs/30/undefined/star--v1.png";
         if (rating > 0 && rating < 1){
-            ratingImage = "https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137305681172.png";
+            ratingImage = "https://img.icons8.com/ios-filled/50/undefined/star-half-empty.png";
         }
         else if( rating < 0){
-            ratingImage = "https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/629161a95a7e3f03109f3905/629161c8620d6f0011232057/16537729137300163506.png";
+            ratingImage = "https://img.icons8.com/windows/32/undefined/star--v1.png";
         }
         rating--;
         d2122.appendChild(createElement("img", {src: ratingImage, class: "image_" + (4 + i*2)}));
@@ -60,8 +62,11 @@ function createParkingDetail(detail){
 
     return d1;
 }
+//<img src="https://img.icons8.com/ios-glyphs/30/undefined/star--v1.png"/>
 
 function initMap(){
+    // https://developers.google.com/maps/documentation/javascript/examples/place-search
+
     const urlParams = new URLSearchParams(window.location.search);
     const infoWindow = new google.maps.InfoWindow();
     const parkingListElm = document.getElementById("parkingList");
@@ -105,6 +110,7 @@ function initMap(){
     );
 
     function createMarker(place) {
+        // google map create marker api
         if (!place.geometry || !place.geometry.location) return;
 
         const marker = new google.maps.Marker({

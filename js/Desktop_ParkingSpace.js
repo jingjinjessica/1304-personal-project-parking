@@ -14,6 +14,7 @@ function createElement(tagName, attributes, content){
     return elm;
 }
 
+
 function randomSeats(num){
     num = 48 - num;
     result = [];
@@ -40,7 +41,7 @@ function randomSeats(num){
     return result;
 }
 function init(){
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.href.split("?")[1]);
     containerElm = document.getElementById("container");
     seats = randomSeats(parseInt(urlParams.get("seats")));
     let sectionNo = 12;
@@ -49,4 +50,10 @@ function init(){
             containerElm.appendChild(createElement("div", {class: "s_" + seats[row][col]}));
         }
     }
+
+    // update form action
+    formElm = document.getElementById("payment");
+    formElm.appendChild(createElement("input", {name: "place_id", type:"hidden", value: urlParams.get("place_id")}));
+
+
 }
