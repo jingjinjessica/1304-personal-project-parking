@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./test.css">
+    <script src="./message.js"></script>
+    
+</head>
+<body>
+    <h3> My google Maps Demo</h3>
+    <div id="floating-panel">
+        <b> Mode of Travel: </b>
+        <select id="mode">
+            <option value="DRIVING">Driving</option>
+            <option value="WALKING"> Walking </option>
+            <option value="BICYCLING">Bicycling</option>
+            <option value="TRANSIT"> Transit </option>
+        </select>
+    </div>
+    <div id="panel"></div>
+    <div id="map"></div>
+    <input id = "pac-input" class="controls" type="text" placeholder="Search Box">
+    
+    
+    
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP7hHhxbElvddh9HzEGQcVV0I8M7LYfXw&callback=initMap&libraries=places,localContext"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParkingSpace</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="css/Desktop_ParkingSpace.css" />
+    <script type="text/javascript" src="js/Desktop_ParkingSpace.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css">
+  </head>
+  <body>
+
+    <div class="flex-col items-center page">
+
+      <div class="flex-col section_1">
+         <a href="Desktop_Profile.html" class="flex-col items-center image-wrapper" style="position: absolute;top:20px; right:20px; z-index: 100;">
+          <img src="https://img.icons8.com/ios/100/000000/guest-male.png" />
+        </a>
+          <div id="container">
+
+          </div>
+      <form id="timepicker" class="timepicker"  action="./Desktop_comf.html">
+        <div>
+          <span class="text">From:</span>
+          <input id="datetimepicker1" class="section_6 view_47" type="text">
+          <span class="text_1">To:</span>
+          <input id="datetimepicker2" class="section_6 view_48" type="text">
+          <input type="submit" value ="Submit" class="flex-col items-center text-wrapper"></input>
+       </div>
+      </form>
+      </div>
+    </div>
+
+  </body>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.datetimepicker.full.js"></script>
+<script>
+  $.datetimepicker.setLocale('en');
+$('#datetimepicker1').datetimepicker({value:'2022/01/01 05:03'});
+// $.datetimepicker2.setLocale('en');
+$('#datetimepicker2').datetimepicker({value:'2022/01/01 05:03'});
+init();
+</script>
+</html>
